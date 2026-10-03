@@ -12,8 +12,8 @@ local Window = WindUI:CreateWindow({
         Anonymous = true,
         Callback = function()
             WindUI:Notify({
-    Title = "Join Discord For Bug Report Or Update.",
-    Content = "Script Is Private If You Want Source Ask 17Quads In Discord.",
+    Title = "Verity Verity Verity",
+    Content = "Nothing To See Here.",
     Duration = 3, -- 3 seconds
     Icon = "bell",
 })
@@ -404,83 +404,6 @@ local ConfirmCustomize = SkinsTab:Button({
 game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
 WindUI:Notify({
     Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local MiscsTab = Window:Tab({
-    Title = "Misc",
-    Icon = "shield",
-    Locked = false,
-})
-
-local Adonis = MiscsTab:Button({
-    Title = "Bypass Adonis's Admin",
-    Desc = "To run remotespy ",
-    Locked = false,
-    Callback = function()
-       local getinfo = getinfo or debug.getinfo
-local DEBUG = false
-local Hooked = {}
-
-local Detected, Kill
-
-setthreadidentity(2)
-
-for i, v in getgc(true) do
-    if typeof(v) == "table" then
-        local DetectFunc = rawget(v, "Detected")
-        local KillFunc = rawget(v, "Kill")
-    
-        if typeof(DetectFunc) == "function" and not Detected then
-            Detected = DetectFunc
-            
-            local Old; Old = hookfunction(Detected, function(Action, Info, NoCrash)
-                if Action ~= "_" then
-                    if DEBUG then
-                        warn(`Adonis AntiCheat flagged\nMethod: {Action}\nInfo: {Info}`)
-                    end
-                end
-                
-                return true
-            end)
-
-            table.insert(Hooked, Detected)
-        end
-
-        if rawget(v, "Variables") and rawget(v, "Process") and typeof(KillFunc) == "function" and not Kill then
-            Kill = KillFunc
-            local Old; Old = hookfunction(Kill, function(Info)
-                if DEBUG then
-                    warn(`Adonis AntiCheat tried to kill (fallback): {Info}`)
-                end
-            end)
-
-            table.insert(Hooked, Kill)
-        end
-    end
-end
-
-local Old; Old = hookfunction(getrenv().debug.info, newcclosure(function(...)
-    local LevelOrFunc, Info = ...
-
-    if Detected and LevelOrFunc == Detected then
-        if DEBUG then
-            warn(`zins | adonis bypassed`)
-        end
-
-        return coroutine.yield(coroutine.running())
-    end
-    
-    return Old(...)
-end))
--- setthreadidentity(9)
-setthreadidentity(7)
-WindUI:Notify({
-    Title = "BYPASS IS DONE.",
     Content = "Finished.",
     Duration = 3, -- 3 seconds
     Icon = "bell",
