@@ -2,16 +2,17 @@
 All My Script Is Fully Open Source
 
 ## Forsaken Free For All
+Scripts Here
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sksnksnskakwkw/My-Script-Yes/refs/heads/main/Ufe-Script"))()
 ```
 
 ## Changelogs
 
-## Forsaken: FFA v1.0.1
-```Release```
-```Added Template Skins```
-```Added Exclusive Skins```
-```Added Customize Skins```
+Forsaken: FFA v1.0.1 - 
+•Release
+•Added Template Skins
+•Added Exclusive Skins
+•Added Customize Skins
 
-## Forsaken: FFA v1.0.2 [Maybe soon or nope]
+Forsaken: FFA v1.0.2 [Maybe soon or nope]
