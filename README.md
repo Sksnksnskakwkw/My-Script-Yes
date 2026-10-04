@@ -1,5 +1,5 @@
-# READ ME
-Greating My Fellow Skidder, All My Script Is Fully Open Source
+# Information
+All My Script Is Fully Open Source
 
 ## Forsaken Free For All
 ```lua
