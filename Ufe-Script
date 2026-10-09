@@ -106,7 +106,7 @@ Mid.TextWrapped = true
 local function LVTPBYT_fake_script() -- README.LocalScript 
 	local script = Instance.new('LocalScript', README)
 
-	if game.PlaceId == 13711410855 then
+	if game.PlaceId == 100039707794702 then
 	local main = script.Parent.Frame
 	local midbutton = main.Mid.MouseButton1Click:Connect(function()
 		script.Parent:Destroy()
