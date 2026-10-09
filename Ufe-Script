@@ -1,425 +1,123 @@
-local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
-local CustomizeSkin = None
-local CustomizeCharacter = None
-local Window = WindUI:CreateWindow({
-    Title = "Forsaken FFA",
-    Icon = "swords", -- lucide icon. optional
-    Author = "By 17Quads",
-    Folder = "Forsaken FFA",
-    User = {
-        Enabled = true,
-        Anonymous = true,
-        Callback = function()
-            WindUI:Notify({
-    Title = "Verity Verity Verity",
-    Content = "Nothing To See Here.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-        end,
-    },
-})
+-- GUI to Lua
+-----
+-- Version: 2.0.
+-- Made by chrisopdemobiel.
 
-Window:Tag({
-    Title = "v1.0.1 Release",
-    Icon = "scroll-text",
-    Color = Color3.fromHex("#40b02c"),
-    Radius = 5,
-})
+-- Instances:
 
-Window:Tag({
-    Title = "Open Source",
-    Icon = "github",
-    Color = Color3.fromHex("#dbca0f"),
-    Radius = 5,
-})
+local README = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local TextLabel_2 = Instance.new("TextLabel")
+local UIListLayout = Instance.new("UIListLayout")
+local Ok = Instance.new("TextButton")
+local Mid = Instance.new("TextButton")
 
-local MainTab = Window:Tab({
-    Title = "Characters",
-    Icon = "users", 
-    Locked = false,
-})
+--Properties:
 
-local DevSection = MainTab:Section({ 
-    Title = "Dev Character [Patched]",
-})
+README.Name = "README"
+README.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+README.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-local Slacker = MainTab:Button({
-    Title = "Slacker",
-    Desc = "Dev Killer",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Slacker"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
+Frame.Parent = README
+Frame.BackgroundColor3 = Color3.fromRGB(123, 123, 123)
+Frame.BackgroundTransparency = 0.550
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.330120474, 0, 0.0756646246, 0)
+Frame.Size = UDim2.new(0, 333, 0, 404)
 
-local EmotesTab = Window:Tab({
-    Title = "Emote",
-    Icon = "sparkles",
-    Locked = false,
-})
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(77, 77, 77)
+TextLabel.BackgroundTransparency = 0.550
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 333, 0, 50)
+TextLabel.Font = Enum.Font.Unknown
+TextLabel.Text = "Changelogs"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeTransparency = 0.000
+TextLabel.TextWrapped = true
 
-local EmoteBSection = EmotesTab:Section({ 
-    Title = "Emote Behavior",
-})
+ScrollingFrame.Parent = Frame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0, 0, 0.143266469, 0)
+ScrollingFrame.Size = UDim2.new(0, 333, 0, 244)
 
-local CancelEmote = EmotesTab:Button({
-    Title = "Stop Emoting",
-    Desc = "Stopping The Emote That You Play",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Scream",
-    [2] = "End"
-}
+TextLabel_2.Parent = ScrollingFrame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Size = UDim2.new(0, 319, 0, 808)
+TextLabel_2.Font = Enum.Font.Unknown
+TextLabel_2.Text = "What's News\\nv1.0.1\\n\\n-Added Customize System\\n-Added Template Skins\\n-Added Exclusive Skin\\n-Remove Charather Tab\\n-Added Hidden Emote"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 32.000
+TextLabel_2.TextStrokeTransparency = 0.000
+TextLabel_2.TextTransparency = 0.400
+TextLabel_2.TextWrapped = true
+TextLabel_2.TextYAlignment = Enum.TextYAlignment.Top
 
-game:GetService("ReplicatedStorage").Remotes.EmoteHandler:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Stopped.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
+UIListLayout.Parent = Frame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
-local EmotesssSection = EmotesTab:Section({ 
-    Title = "Hidden Emotes",
-})
+Ok.Name = "Ok"
+Ok.Parent = Frame
+Ok.BackgroundColor3 = Color3.fromRGB(85, 170, 0)
+Ok.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Ok.BorderSizePixel = 0
+Ok.Position = UDim2.new(0, 0, 0.727722764, 0)
+Ok.Size = UDim2.new(0, 333, 0, 55)
+Ok.Font = Enum.Font.Unknown
+Ok.Text = "Alright!"
+Ok.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ok.TextScaled = true
+Ok.TextSize = 14.000
+Ok.TextStrokeTransparency = 0.000
+Ok.TextTransparency = 0.200
+Ok.TextWrapped = true
 
-local AllYourFault = EmotesTab:Button({
-    Title = "ALL YOUR FAULT",
-    Desc = "Exclusive Emote",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "ALL YOUR FAULT",
-    [2] = "Start"
-}
+Mid.Name = "Mid"
+Mid.Parent = Frame
+Mid.BackgroundColor3 = Color3.fromRGB(165, 0, 0)
+Mid.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Mid.BorderSizePixel = 0
+Mid.Position = UDim2.new(0, 0, 0.863861382, 0)
+Mid.Size = UDim2.new(0, 333, 0, 55)
+Mid.Font = Enum.Font.Unknown
+Mid.Text = "MID UPDATE TRASHH"
+Mid.TextColor3 = Color3.fromRGB(255, 255, 255)
+Mid.TextScaled = true
+Mid.TextSize = 14.000
+Mid.TextStrokeTransparency = 0.000
+Mid.TextTransparency = 0.200
+Mid.TextWrapped = true
 
-game:GetService("ReplicatedStorage").Remotes.EmoteHandler:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Playing.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
+-- Scripts:
 
-local Keys = EmotesTab:Button({
-    Title = "KeyAfterKey Emote Where he Eggo made The emote song of the Emote he made",
-    Desc = "Exclusive Emote",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "KeyAfterKey Emote Where he Eggo made The emote song of the Emote he made",
-    [2] = "Start"
-}
+local function LVTPBYT_fake_script() -- README.LocalScript 
+	local script = Instance.new('LocalScript', README)
 
-game:GetService("ReplicatedStorage").Remotes.EmoteHandler:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Playing.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local SkinsTab = Window:Tab({
-    Title = "Skins",
-    Icon = "shirt",
-    Locked = false,
-})
-
-local ExclusiveSection = SkinsTab:Section({ 
-    Title = "True Exclusive",
-})
-
-local AmericanNoob= SkinsTab:Button({
-    Title = "Sweethearts Noob",
-    Desc = "Noob Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Noob",
-    [2] = "AmericanNoob"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local ElliotAmerican = SkinsTab:Button({
-    Title = "Firework Fanatic",
-    Desc = "Elliot Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Elliot",
-    [2] = "AmericanElliot"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local Commando = SkinsTab:Button({
-    Title = "American Commando",
-    Desc = "Guest1337 Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Guest1337",
-    [2] = "AmericanGuest"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local ChanceAmerican = SkinsTab:Button({
-    Title = "American Cowboy",
-    Desc = "Chance Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Chance",
-    [2] = "AmericanChance"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local UncleZom = SkinsTab:Button({
-    Title = "Uncle Zom",
-    Desc = "Dusekkar Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Dusekkar",
-    [2] = "AmericanDusekkar"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local IndependenceChicken = SkinsTab:Button({
-    Title = "Independence Chicken",
-    Desc = "Shedletsky Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Shedletsky",
-    [2] = "AmericanShedletsky"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local Patriot = SkinsTab:Button({
-    Title = "Patriot Locator",
-    Desc = "007n7 Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "007n7",
-    [2] = "American007n7"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local Joib = SkinsTab:Button({
-    Title = "Joib",
-    Desc = "Shedletsky Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Shedletsky",
-    [2] = "Joib"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local Yuri = SkinsTab:Button({
-    Title = "Yuri",
-    Desc = "Guest1337 Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Guest1337",
-    [2] = "YuriGuest"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local TrollSection = SkinsTab:Section({ 
-    Title = "Troll Skins",
-})
-
-local EvilJoib = SkinsTab:Button({
-    Title = "Joib",
-    Desc = "Slasher Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Jason",
-    [2] = "Joib"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local TrueEvilSoapy = SkinsTab:Button({
-    Title = "Soapy",
-    Desc = "1x4 Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "1x4",
-    [2] = "SoapyDX"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local EvilDan = SkinsTab:Button({
-    Title = "Dan",
-    Desc = "Swordsmaster Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = "Swordsmaster",
-    [2] = "Dan"
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
-
-local CustomizeSection = SkinsTab:Section({ 
-    Title = "Customize. Hate the template why not make your own?",
-})
-local CharacterCustom = SkinsTab:Dropdown({
-    Title = "Characters",
-    Desc = "Selected Character",
-    Values = { "Noob", "Elliot", "Shedletsky", "TwoTime", "Guest1337",  "Veeronica", "007n7", "Chance", "Dusekkar", "JaneDoe", "Poisoned", "MartialArtist", "JohnDoe", "1x4", "Slacker", "Swordsmaster", "Coolkid", "Jason", "Messi", "Noli", "Azure"},
-    Value = { "Jason" },
-    Multi = false,
-    AllowNone = false,
-    Callback = function(option) 
-        CustomizeCharacter = option
-    end
-})
-
-local SkinCustom = SkinsTab:Dropdown({
-    Title = "Skins",
-    Desc = "Selected Skin",
-    Values = { "Dan", "Upbeat", "SoapyDX",  "BluuDude", "CoolPwny",  "CombatInitiationJason", "Krystal", "GoldenShedletsky", "GoldenDusekkar", "GoldenChance", "VIPShed", "VIPSlasher", "YuriGuest", "Joib", "AmericanGuest", "AmericanDusekkar", "AmericanNoob", "AmericanChance", "AmericanShedletsky", "American007n7",  "AmericanElliot", "AmericanSlasher", "Gatito1x4", "1dev2", "Gatito1x4", "Dexter", "Subject0", "Nebula", "OriginalCK", "AlfredDevis", "Pretty", "Mafioso", "Timeless", "Blega", "Betrayed1x4", "HomerunnerJason", "BarberSlasher", "PestSlasher", "AftonJason", "Gasharpoon", "KillerKyleJason", "VanitySlasher", "RetroSlasher", "Old1x4", "Classic1x4", "ScriptBuilder", "Geometry", "ToonDoe", "YAAINoli", "Umbra", "CoolSkeleton", "Phonk", "DIVADAYO", "Colors", "XD", "progamersalad", "TheSaladAppears", "SorcererGuest", "Goat", "SoapyDXLegacy", "Pastello", "TehPwnz0rSlasher", "H20", "JohnDough", "TelamonShedletsky", "BrightEyes", "PirateShedletsky", "Listro", "DownTunes", "Font", "ModernShedletsky", "GoldenGuest", "McGillavryShedletsky", "Grollusiam", "eggs", "Cowboy", "ChickenShedletsky", "MinigameNoob", "SerpentChance", "NessShedletsky", "RXQDusekkar", "Jones", "DragonGuest", "ClassicGuest", "PartyNoob", "Drifter", "FirstBorn"},
-    Value = { "None" },
-    Multi = false,
-    AllowNone = false,
-    Callback = function(option) 
-        CustomizeSkin = option
-    end
-})
-
-local ConfirmCustomize = SkinsTab:Button({
-    Title = "Confirm",
-    Desc = "Confirm Customize Skin",
-    Locked = false,
-    Callback = function()
-    local args = {
-    [1] = CustomizeCharacter,
-    [2] = CustomizeSkin
-}
-game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
-WindUI:Notify({
-    Title = "Done!",
-    Content = "Finished.",
-    Duration = 3, -- 3 seconds
-    Icon = "bell",
-})
-    end
-})
+	if game.PlaceId == 13711410855 then
+	local main = script.Parent.Frame
+	local midbutton = main.Mid.MouseButton1Click:Connect(function()
+		script.Parent:Destroy()
+		game.Players.LocalPlayer:Kick("L For Pressing Mid Button")
+	end)
+	
+	local okbutton = main.Ok.MouseButton1Click:Connect(function()
+		script.Parent:Destroy()
+	end)
+	else
+		game.Players.LocalPlayer:Kick("Yoo wrong gameðŸ˜‚ðŸ˜‚")
+	end
+end
+coroutine.wrap(LVTPBYT_fake_script)()
