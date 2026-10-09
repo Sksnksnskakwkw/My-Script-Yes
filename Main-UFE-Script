@@ -1,1 +1,425 @@
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local CustomizeSkin = None
+local CustomizeCharacter = None
+local Window = WindUI:CreateWindow({
+    Title = "Forsaken FFA",
+    Icon = "swords", -- lucide icon. optional
+    Author = "By 17Quads",
+    Folder = "Forsaken FFA",
+    User = {
+        Enabled = true,
+        Anonymous = true,
+        Callback = function()
+            WindUI:Notify({
+    Title = "Verity Verity Verity",
+    Content = "Nothing To See Here.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+        end,
+    },
+})
 
+Window:Tag({
+    Title = "v1.0.1 Release",
+    Icon = "scroll-text",
+    Color = Color3.fromHex("#40b02c"),
+    Radius = 5,
+})
+
+Window:Tag({
+    Title = "Open Source",
+    Icon = "github",
+    Color = Color3.fromHex("#dbca0f"),
+    Radius = 5,
+})
+
+local MainTab = Window:Tab({
+    Title = "Characters",
+    Icon = "users", 
+    Locked = false,
+})
+
+local DevSection = MainTab:Section({ 
+    Title = "Dev Character [Patched]",
+})
+
+local Slacker = MainTab:Button({
+    Title = "Slacker",
+    Desc = "Dev Killer",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Slacker"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local EmotesTab = Window:Tab({
+    Title = "Emote",
+    Icon = "sparkles",
+    Locked = false,
+})
+
+local EmoteBSection = EmotesTab:Section({ 
+    Title = "Emote Behavior",
+})
+
+local CancelEmote = EmotesTab:Button({
+    Title = "Stop Emoting",
+    Desc = "Stopping The Emote That You Play",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Scream",
+    [2] = "End"
+}
+
+game:GetService("ReplicatedStorage").Remotes.EmoteHandler:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Stopped.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local EmotesssSection = EmotesTab:Section({ 
+    Title = "Hidden Emotes",
+})
+
+local AllYourFault = EmotesTab:Button({
+    Title = "ALL YOUR FAULT",
+    Desc = "Exclusive Emote",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "ALL YOUR FAULT",
+    [2] = "Start"
+}
+
+game:GetService("ReplicatedStorage").Remotes.EmoteHandler:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Playing.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local Keys = EmotesTab:Button({
+    Title = "KeyAfterKey Emote Where he Eggo made The emote song of the Emote he made",
+    Desc = "Exclusive Emote",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "KeyAfterKey Emote Where he Eggo made The emote song of the Emote he made",
+    [2] = "Start"
+}
+
+game:GetService("ReplicatedStorage").Remotes.EmoteHandler:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Playing.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local SkinsTab = Window:Tab({
+    Title = "Skins",
+    Icon = "shirt",
+    Locked = false,
+})
+
+local ExclusiveSection = SkinsTab:Section({ 
+    Title = "True Exclusive",
+})
+
+local AmericanNoob= SkinsTab:Button({
+    Title = "Sweethearts Noob",
+    Desc = "Noob Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Noob",
+    [2] = "AmericanNoob"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local ElliotAmerican = SkinsTab:Button({
+    Title = "Firework Fanatic",
+    Desc = "Elliot Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Elliot",
+    [2] = "AmericanElliot"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local Commando = SkinsTab:Button({
+    Title = "American Commando",
+    Desc = "Guest1337 Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Guest1337",
+    [2] = "AmericanGuest"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local ChanceAmerican = SkinsTab:Button({
+    Title = "American Cowboy",
+    Desc = "Chance Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Chance",
+    [2] = "AmericanChance"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local UncleZom = SkinsTab:Button({
+    Title = "Uncle Zom",
+    Desc = "Dusekkar Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Dusekkar",
+    [2] = "AmericanDusekkar"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local IndependenceChicken = SkinsTab:Button({
+    Title = "Independence Chicken",
+    Desc = "Shedletsky Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Shedletsky",
+    [2] = "AmericanShedletsky"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local Patriot = SkinsTab:Button({
+    Title = "Patriot Locator",
+    Desc = "007n7 Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "007n7",
+    [2] = "American007n7"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local Joib = SkinsTab:Button({
+    Title = "Joib",
+    Desc = "Shedletsky Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Shedletsky",
+    [2] = "Joib"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local Yuri = SkinsTab:Button({
+    Title = "Yuri",
+    Desc = "Guest1337 Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Guest1337",
+    [2] = "YuriGuest"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local TrollSection = SkinsTab:Section({ 
+    Title = "Troll Skins",
+})
+
+local EvilJoib = SkinsTab:Button({
+    Title = "Joib",
+    Desc = "Slasher Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Jason",
+    [2] = "Joib"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local TrueEvilSoapy = SkinsTab:Button({
+    Title = "Soapy",
+    Desc = "1x4 Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "1x4",
+    [2] = "SoapyDX"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local EvilDan = SkinsTab:Button({
+    Title = "Dan",
+    Desc = "Swordsmaster Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = "Swordsmaster",
+    [2] = "Dan"
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
+
+local CustomizeSection = SkinsTab:Section({ 
+    Title = "Customize. Hate the template why not make your own?",
+})
+local CharacterCustom = SkinsTab:Dropdown({
+    Title = "Characters",
+    Desc = "Selected Character",
+    Values = { "Noob", "Elliot", "Shedletsky", "TwoTime", "Guest1337",  "Veeronica", "007n7", "Chance", "Dusekkar", "JaneDoe", "Poisoned", "MartialArtist", "JohnDoe", "1x4", "Slacker", "Swordsmaster", "Coolkid", "Jason", "Messi", "Noli", "Azure"},
+    Value = { "Jason" },
+    Multi = false,
+    AllowNone = false,
+    Callback = function(option) 
+        CustomizeCharacter = option
+    end
+})
+
+local SkinCustom = SkinsTab:Dropdown({
+    Title = "Skins",
+    Desc = "Selected Skin",
+    Values = { "Dan", "Upbeat", "SoapyDX",  "BluuDude", "CoolPwny",  "CombatInitiationJason", "Krystal", "GoldenShedletsky", "GoldenDusekkar", "GoldenChance", "VIPShed", "VIPSlasher", "YuriGuest", "Joib", "AmericanGuest", "AmericanDusekkar", "AmericanNoob", "AmericanChance", "AmericanShedletsky", "American007n7",  "AmericanElliot", "AmericanSlasher", "Gatito1x4", "1dev2", "Gatito1x4", "Dexter", "Subject0", "Nebula", "OriginalCK", "AlfredDevis", "Pretty", "Mafioso", "Timeless", "Blega", "Betrayed1x4", "HomerunnerJason", "BarberSlasher", "PestSlasher", "AftonJason", "Gasharpoon", "KillerKyleJason", "VanitySlasher", "RetroSlasher", "Old1x4", "Classic1x4", "ScriptBuilder", "Geometry", "ToonDoe", "YAAINoli", "Umbra", "CoolSkeleton", "Phonk", "DIVADAYO", "Colors", "XD", "progamersalad", "TheSaladAppears", "SorcererGuest", "Goat", "SoapyDXLegacy", "Pastello", "TehPwnz0rSlasher", "H20", "JohnDough", "TelamonShedletsky", "BrightEyes", "PirateShedletsky", "Listro", "DownTunes", "Font", "ModernShedletsky", "GoldenGuest", "McGillavryShedletsky", "Grollusiam", "eggs", "Cowboy", "ChickenShedletsky", "MinigameNoob", "SerpentChance", "NessShedletsky", "RXQDusekkar", "Jones", "DragonGuest", "ClassicGuest", "PartyNoob", "Drifter", "FirstBorn"},
+    Value = { "None" },
+    Multi = false,
+    AllowNone = false,
+    Callback = function(option) 
+        CustomizeSkin = option
+    end
+})
+
+local ConfirmCustomize = SkinsTab:Button({
+    Title = "Confirm",
+    Desc = "Confirm Customize Skin",
+    Locked = false,
+    Callback = function()
+    local args = {
+    [1] = CustomizeCharacter,
+    [2] = CustomizeSkin
+}
+game:GetService("ReplicatedStorage").ChangeCharacter:FireServer(unpack(args))
+WindUI:Notify({
+    Title = "Done!",
+    Content = "Finished.",
+    Duration = 3, -- 3 seconds
+    Icon = "bell",
+})
+    end
+})
