@@ -10,7 +10,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Sksnksnskakwkw/My-Scr
 
 Without Changelogs
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Sksnksnskakwkw/My-Script-Yes/refs/heads/main/Ufe-Script"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sksnksnskakwkw/My-Script-Yes/refs/heads/main/Main-UFE-Script"))()
 ```
 
 ## Changelogs
